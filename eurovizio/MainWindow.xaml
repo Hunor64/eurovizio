@@ -1,0 +1,56 @@
+﻿<Window x:Class="eurovizio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eurovizio"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0" x:Name="dataGrid" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Év" Binding="{Binding Ev}" />
+                <DataGridTextColumn Header="Előadó" Binding="{Binding Eloado}" />
+                <DataGridTextColumn Header="Cím" Binding="{Binding Cim}" />
+                <DataGridTextColumn Header="Helyezés" Binding="{Binding Helyezes}" />
+                <DataGridTextColumn Header="Pontszám" Binding="{Binding Pontszam}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
+            <TextBox x:Name="filterTextBox" Width="200" Margin="0 0 10 0" />
+            <Button x:Name="filterButton" Content="Szűrés" Click="FilterButton_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
+            <Button x:Name="versenyButton" Content="Verseny dátuma" Click="VersenyButton_Click" />
+            <Label x:Name="versenyLabel" Content="Verseny dátuma: " Margin="10 0 0 0" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="0 10 0 0">
+            <Button x:Name="feladat4Button" Content="4. feladat" Click="Feladat4_Click" Margin="0 0 0 5" />
+            <Label x:Name="magyarVersenyzoSzamLabel" />
+            <Label x:Name="legjobbHelyezesLabel" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Vertical" Margin="0 10 0 0">
+            <Button x:Name="feladat5Button" Content="5. feladat" Click="Feladat5_Click" Margin="0 0 0 5" />
+            <Label x:Name="atlagPontszamLabel" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Vertical" Margin="0 10 0 0">
+            <Button x:Name="feladat6Button" Content="6. feladat" Click="Feladat6_Click" Margin="0 0 0 5" />
+            <Label x:Name="luckDalokLabel" />
+        </StackPanel>
+    </Grid>
+
+</Window>
