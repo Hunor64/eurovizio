@@ -29,6 +29,8 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
             <TextBox x:Name="filterTextBox" Width="200" Margin="0 0 10 0" />
             <Button x:Name="filterButton" Content="Szűrés" Click="FilterButton_Click" />
+            <ListBox x:Name="resultListBox" SelectionMode="Single" />
+            
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
